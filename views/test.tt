@@ -1,0 +1,15 @@
+<p>Tu viens d'écrire :
+Tu t'appelles : [% nom %] et tu as [% age %], tu es un [% sexe %] et tu possède un pouf [%pouf %]
+</br></br>
+</p>
+
+<FORM METHOD=GET ACTION="/cgi-bin/ShareX-App/public/dispatch.cgi/test">
+
+<p><INPUT type=text id="box" name="box" value="[% box1 %]"></p>
+<p><INPUT type=text id="age" name="age" value="[% box2 %]"></p>
+<p><INPUT type=text id="sexe" name="sexe" value="[% box3 %]"></p>
+<p><INPUT type=checkbox id="pouf" name="pouf"><label for="pouf">Poss�dez vous un pouf</label></p>
+<p><INPUT type=submit value="D�poser fichier"></p>
+
+</FORM>
+

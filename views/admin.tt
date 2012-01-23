@@ -1,16 +1,20 @@
-  		<div class="info info-vert">
+[% IF !isAdmin %]
+  		<div class="info info-rouge">
 			<h1>Information</h1>
-			<p>Le téléchargement du fichier NomDuFichier.ext est terminé</p>
-			<p>Le lien pour accéder au téléchargement est: <a href=Le téléchargement du fichier NomDuFichier.ext est terminé"">http://bit.ly/blabla</a></p>
-			<p>[% message %]</p>
+			<p>Vous ne devez pas etre ici.</p>
+		</div>
+[% END %]
+[% IF isAdmin %]
+ 		<div class="info info-vert">
+			<h1>Information</h1>
+			<p>C'est la page d'administration !!</p>
 		</div>
 
-		<form method="POST" action="[% request.uri_base %]/upload" enctype="multipart/form-data">
+		<form>
 		<fieldset>
 			<legend>Formulaire d'envoi de fichier</legend>
 			<p class="acenter" style="background-color: #f0f0f0; padding: 2px; width: 70%; margin-left: auto; margin-right: auto; text-align: center;">
-
-				<input id="file" name="file" type="file" value="Cliquez-ici">
+				<input id="filename" name="filename" type="file" value="Cliquez-ici">
 			</p>
 			<p class="acenter">
 				<label for="expiration_days">Expiration du fichier:</label>
@@ -29,7 +33,7 @@
 			</p>
 			<p>
 				<input id="acknowlegdement" name="acknowlegdement" type="checkbox">
-				<label for="acknowlegdement">Recevoir un accusé de réception Ã  chaque téléchargement</label>
+				<label for="acknowlegdement">Recevoir un accusé de réception à chaque téléchargement</label>
 			</p>
 
 			<p>
@@ -49,3 +53,4 @@
 			
 		</fielset>
 		</form>
+[% END %]
